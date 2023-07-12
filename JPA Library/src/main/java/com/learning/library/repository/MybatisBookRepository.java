@@ -1,0 +1,20 @@
+package com.learning.library.repository;
+
+import com.learning.library.entity.BookEntity;
+import org.apache.ibatis.annotations.Mapper;
+
+import java.util.List;
+import java.util.Optional;
+@Mapper
+public interface MybatisBookRepository {
+    void save(BookEntity bookEntity);
+
+    List<BookEntity> findAll();
+
+    List<BookEntity> findCond(BookEntity bookEntity);
+    Optional<BookEntity> findById(Long bookId);
+
+    void update(BookEntity bookEntity);
+
+    void delete(BookEntity bookEntity);
+}
